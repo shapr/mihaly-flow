@@ -1,0 +1,10 @@
+[package]
+name = "mihaly_flow"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[dependencies]
+differential-dataflow = "*"
+rand = "*"
+timely = "*"
