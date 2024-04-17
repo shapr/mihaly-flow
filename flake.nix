@@ -33,10 +33,14 @@
         ];
       };
 
-      rustToolchain = pkgs.rust-bin.selectLatestNightlyWith (toolchain:
-        toolchain.default.override {
+      # rustToolchain = pkgs.rust-bin.selectLatestNightlyWith (toolchain:
+      #   toolchain.default.override {
+      #     extensions = ["rust-src"];
+      #   });
+
+      rustToolchain = pkgs.rust-bin.stable."1.76.0".default.override {
           extensions = ["rust-src"];
-        });
+        };
 
       craneLib = crane.lib.${system}.overrideToolchain rustToolchain;
 
